@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#content .check-btn.result {display: none;}
+.result {display: none;}
+
+body {display: flex;}
+
+#main {display:flex; flex-direction:column; width: calc(100% - 220px); position: relative;}
+
+/* header */
+#header {width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+background-image: url(../../images/myPage/home/visual_pc_mypage.gif);
+background-repeat: no-repeat;
+background-size: cover;}
+#header h2 {font-size: 34px; color:#fff; letter-spacing: -0.03em;}
+
+/* content */
+#content {width: 960px; margin: 30px auto 0 auto;}
+#content h3 {text-align: center; font-size: 24px; color:#000; padding-bottom: 25px;}
+#content .content-box {border: 1px solid #e6e6e6; box-sizing: border-box;}
+#content .content-box .area {width: 504px; margin: 30px auto;}
+#content .content-box .change-pw-box .area {display: flex;}
+#content .content-box .change-pw-box .input-box {display: flex; width: 100%; flex-direction: column; padding: 7px 12px; background-color: #f3f4f6;}
+#content .content-box .change-pw-box .input-box label {font-weight: bold;}
+#content .content-box .change-pw-box .input-box input {width: 100%; height: 28px; background: transparent; font-size: 16px; color: #000; border:0;}
+#content .content-box .change-pw-box .change-pw-btn {width: 130px; height: 60px; font-size: 16px; background: #5754b5; color: #fff; margin-left: auto;}
+#content .content-box .change-pw-box .change-pw-btn:hover {background-color: #4b4a73;}
+#content .content-box .result-box {box-sizing: border-box; border-top: 1px solid #e6e6e6;}
+#content .content-box .result-box .text-head {color: #666; padding-left: 15px;}
+#content .content-box .result-box .result-id {margin: 15px 0; border-top: 1px solid #999; border-bottom: 1px solid #e6e6e6; padding: 15px; font-size: 20px; color: #000;}
+#content .content-box .result-box .text-foot {color: #666; padding-left: 8px; position: relative;}
+#content .content-box .result-box .text-foot:before {content:""; position: absolute; background: #919191; top: 50%; left: 0; transform: translateY(-50%); width: 2px;  height: 2px;}
+#content .page-move {display: flex; justify-content: center; margin-top: 30px;}
+#content .page-move a {display: flex; justify-content: center; align-items: center; width: 130px; height: 50px; font-size: 16px; background: #5754b5; color: #fff;}
+#content .page-move a:hover {background-color: #4b4a73;}
+#content .page-move li:last-child {margin-left: 8px;}
+
+
+
+#content .change-pw-btn {width: 130px; height: 60px; font-size: 16px; background: #5754b5; color: #fff; margin: 30px auto ; display: block;}
+
+
+
+

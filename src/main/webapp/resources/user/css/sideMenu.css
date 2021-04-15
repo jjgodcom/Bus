@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#side-menu {width:220px; min-height: 100vh; box-sizing: border-box; border-right: 1px solid #e6e6e6;}
+
+/* logo */
+.logo {display: flex; justify-content: center; padding-top: 44px;}
+.logo img {display: block; margin: 0 auto 15px auto;}
+.logo span {font-weight: bold; }
+
+/* menu */
+.menu {margin-top: 50px;}
+.menu a {display: block; padding: 9px 10px 9px 30px; font-size: 15px;}

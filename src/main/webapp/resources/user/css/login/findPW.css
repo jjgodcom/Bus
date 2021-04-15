@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body {display: flex;}
+
+#main {display:flex; flex-direction:column; width: calc(100% - 220px); position: relative;}
+
+/* header */
+#header {width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+background-image: url(../../images/login/visual_joinT_bg.gif);
+background-repeat: no-repeat;
+background-size: cover;}
+#header h2 {font-size: 34px; color:#fff; letter-spacing: -0.03em;}
+
+/* content */
+#content {width: 960px; margin: 30px auto 0 auto;}
+#content h3 {text-align: center; font-size: 24px; color:#000; padding-bottom: 25px;}
+#content .content-box {border: 1px solid #e6e6e6; box-sizing: border-box;}
+#content .content-box .area {width: 504px; margin: 30px auto;}
+#content .content-box .find-pw-box .area {display: flex;}
+#content .content-box .find-pw-box .input-box {display: flex; width: 366px; flex-direction: column; padding: 7px 12px; background-color: #f3f4f6;}
+#content .content-box .find-pw-box .input-box label {font-weight: bold;}
+#content .content-box .find-pw-box .input-box input {width: 100%; height: 28px; background: transparent; font-size: 16px; color: #000; border:0;}
+#content .content-box .find-pw-box .find-pw-btn {width: 130px; height: 60px; font-size: 16px; background: #5754b5; color: #fff; margin-left: auto;}
+#content .content-box .find-pw-box .find-pw-btn:hover {background-color: #4b4a73;}
+#content .content-box .result-box {box-sizing: border-box; border-top: 1px solid #e6e6e6;}
+#content .content-box .result-box .text-head {color: #666; padding-left: 15px;}
+#content .page-move {display: flex; justify-content: center; margin-top: 30px;}
+#content .page-move a {display: flex; justify-content: center; align-items: center; padding: 0 20px; height: 50px; font-size: 16px; background: #5754b5; color: #fff;}
+#content .page-move a:hover {background-color: #4b4a73;}
+.result {display: none;}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+body {display: flex;}
+
+#main {display:flex; flex-direction:column; width: calc(100% - 220px); position: relative;}
+
+/* header */
+#header {width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+background-image: url(../../images/login/visual_joinT_bg.gif);
+background-repeat: no-repeat;
+background-size: cover;}
+#header h2 {font-size: 34px; color:#fff; letter-spacing: -0.03em;}
+
+/* content */
+#content {width: 960px; margin: 30px auto 0 auto;}
+#content .content-box {border: 1px solid #e6e6e6; box-sizing: border-box;}
+
+#content .content-box .login-box {padding: 30px 0 40px 0;}
+#content .content-box .login-box h3 {font-size: 28px; color: #000; text-align: center; margin-bottom: 3px;}
+#content .content-box .login-box p {margin-bottom: 16px; font-size: 13px; color: #666; text-align: center;}
+#content .content-box .login-box p span {color:#68b3ce;}
+#content .content-box .login-box .login-form {width: 514px; margin: 0 auto;}
+#content .content-box .login-box .login-form .login-form-box {display: flex;}
+#content .content-box .login-box .login-form .login-form-box .input-warp {width: 336px;}
+#content .content-box .login-box .login-form .login-form-box .input-box {display: flex; flex-direction: column;padding: 7px 12px; background-color: #f3f4f6;}
+#content .content-box .login-box .login-form .login-form-box .input-box:last-child {margin-top: 8px;}
+#content .content-box .login-box .login-form .login-form-box .input-box label {font-weight: bold;}
+#content .content-box .login-box .login-form .login-form-box .input-box input {width: 100%; height: 28px; background: transparent; font-size: 16px; color: #000; border:0;}
+
+
+    
+#content .content-box .login-box .login-form .login-form-box .login-btn {width: 140px; border:0; cursor: pointer; margin-left: 8px; font-size: 16px; color:#fff; background-color: #b8becc;}
+
+
+#content .content-box .login-box .login-form .find-box {display: flex; padding-left: 10px; margin-top: 45px;}
+#content .content-box .login-box .login-form .find-box a {display: flex; align-items: center; font-size: 12px; color: #a1a6b2;}
+#content .content-box .login-box .login-form .find-box a:last-child {margin-left: 50px;}
+#content .content-box .login-box .login-form .find-box a .img {width: 30px; height: 25px; margin-right: 10px;
+background-repeat: no-repeat;
+background-size: contain;
+background-position:center;}
+#content .content-box .login-box .login-form .find-box a:first-child .img {background-image: url(../../images/login/ico_searchId_off.png);}
+#content .content-box .login-box .login-form .find-box a:last-child .img {background-image: url(../../images/login/ico_searchPW_off.png);}
+#content .content-box .login-box .login-form .find-box a:hover {color:#68b3ce;}
+#content .content-box .login-box .login-form .find-box a:hover:first-child .img {background-image: url(../../images/login/ico_searchId_on.png);}
+#content .content-box .login-box .login-form .find-box a:hover:last-child .img {background-image: url(../../images/login/ico_searchPW_on.png);}
+
+#content .content-box .join-box {padding: 8px; border-top: 1px solid #e6e6e6; box-sizing: border-box;}
+#content .content-box .join-box .sub-box {display: flex; align-items: center; background-color: #fff; background: #f3f4f6; padding: 25px 10px;}
+#content .content-box .join-box .sub-box span {font-size: 14px; color:#000;}
+#content .content-box .join-box .sub-box a {display: flex; padding: 0 8px 0 20px; border-left:1px solid #e7e8ec; align-items: center; margin-left: auto; color: #a1a6b2; font-size: 14px;}
+#content .content-box .join-box .sub-box a img {margin-right: 8px;}
+
+#content .banner {width: 100%; height: 100px; margin-top: 20px; background-color: #95cadd; position: relative; display: flex; align-items: center;}
+#content .banner p {font-size: 22px; color:#fff; padding-left: 30px;}
+#content .banner img {position: absolute; bottom: 0; right: 40px;}
+

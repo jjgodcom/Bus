@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jjgodcom.MemberMapper">
+
+<select id="selectList" resultType="com.jjgodcom.vo.MemberVO">
+	select * from member_tb
+</select>
+
+<select id="selectOne" resultType="com.jjgodcom.vo.MemberVO">
+	select * from member_tb where 
+	<choose>
+		<when test="email != null">email=#{email}</when>
+		<when test="phone != null">phone=#{phone}</when>
+	</choose>
+</select>
+
+<select id="terminalSelectList" resultType="com.jjgodcom.vo.TerminalVO"> 
+	select * from all_bus_tb where area=#{value}
+</select>
+
+<update id="updateUser">
+	UPDATE member_tb
+	SET 
+	password=#{password},
+	phone=#{phone},
+	birthd=#{birthd},
+	point=#{point}
+	WHERE email=#{email} 
+</update>
+
+<update id="updatePassword">
+	UPDATE member_tb
+	SET password=#{password}
+	WHERE email=#{email} 
+</update>
+
+<update id="updatePhone">
+	UPDATE member_tb
+	SET phone=#{phone}
+	WHERE email=#{email} 
+</update>
+
+<insert id="userInsert">
+	INSERT into member_tb values(
+	#{email},
+	#{password},
+	#{phone},
+	#{birthd},
+	DEFAULT,
+	DEFAULT)
+</insert>
+
+<delete id="deleteUser">
+	DELETE from member_tb where email=#{email}
+</delete>
+
+
+</mapper>

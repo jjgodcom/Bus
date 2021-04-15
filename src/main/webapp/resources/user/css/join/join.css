@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {display: flex;}
+
+#main {display:flex; flex-direction:column; width: calc(100% - 220px); position: relative;}
+
+/* header */
+#header {width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+background-image: url(../../images/login/visual_joinT_bg.gif);
+background-repeat: no-repeat;
+background-size: cover;}
+#header h2 {font-size: 34px; color:#fff; letter-spacing: -0.03em;}
+
+/* content */
+#content {width: 960px; margin: 30px auto 0 auto;}
+#content h3 {text-align: center; font-size: 24px; color:#000; padding-bottom: 25px;}
+#content .content-box {border: 1px solid #e6e6e6; box-sizing: border-box;}
+#content .content-box .join-box {width: 514px; margin: 30px auto;}
+#content .content-box .join-box > div {margin-top: 8px;}
+#content .content-box .join-box > div:first-child {margin-top: 0;}
+#content .content-box .join-box .input-box,
+#content .content-box .join-box .select-box {display: flex; flex-direction: column; padding: 7px 12px;  background-color: #f3f4f6;}
+#content .content-box .join-box .input-box label,
+#content .content-box .join-box .select-box label {font-weight: bold;}
+#content .content-box .join-box .input-box input,
+#content .content-box .join-box .select-box select {width: 100%; height: 28px; background: transparent; font-size: 16px; color: #000; border: 0;}
+
+
+#content .btn-box {margin-top: 30px;}
+#content li {text-align: center;}
+#content .btn-box .join-btn {min-width: 130px; padding: 0 20px; font-size: 16px; color: #fff; background-color: #b8becc; height: 50px;}
+#content .btn-box .join-btn:hover {background-color: #a1abc2;}
+#content .text-box {margin-top: 15px;}
+#content .text-box li {position: relative; padding-left: 8px; color:#666; font-size: 12px; text-align: left;}
+#content .text-box li:last-child {margin-top: 5px;}
+#content .text-box li:before {content:""; position: absolute; background: #919191; top: 50%; left: 0; transform: translateY(-50%); width: 2px;  height: 2px;}
+
+
+

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* footer */
+#footer {position: relative; background: #fff; margin: auto 29px 0 29px; padding: 20px 0 25px 0; border-top: 1px solid #e5e5e5;}
+#footer .sub-menu {display: flex; align-items: center; margin-bottom: 25px;}
+#footer .sub-menu li {margin-right: 20px; font-size: 12px; color:#666; position: relative;}
+#footer .sub-menu li:nth-child(2) {color: #68b3ce; font-weight: bold; font-size: 14.4px;}
+#footer .sub-menu li:before {content:""; position: absolute; top: 50%; right: -10px; transform: translateY(-50%); width: 1px; height: 12px; background-color: #41455a;}
+#footer .sub-menu li:last-child:before {display: none;}
+#footer .company-info {font-size: 11px; color:#999; margin: 3px 0;}
+#footer .copyright {font-size: 10px; color:#999;}
+#footer .company-info2 {position: absolute; bottom: 30px; right: 30px; display: flex;}
+#footer .company-info2 img {height: 39px;}
+#footer .company-info2 img:first-child {margin-right: 10px;}

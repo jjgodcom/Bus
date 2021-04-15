@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jjgodcom.BoardMapper">
+
+<select id="boardSelectList" resultType="com.jjgodcom.vo.BoardVO"> 
+	select * from questions_tb order by seq
+</select>
+
+<select id="boardSearchSelectList" resultType="com.jjgodcom.vo.BoardVO"> 
+	SELECT * FROM questions_tb WHERE email Like  '%'||#{email}||'%'
+</select>
+
+<select id="boardSelectOne" resultType="com.jjgodcom.vo.BoardVO"> 
+	select * from questions_tb where email=#{email} and seq = #{seq}
+</select>
+
+<insert id="boardInsert">
+	<selectKey keyProperty="seq" resultType="int" order="BEFORE">
+		SELECT NVL(MAX(seq),0)+1 FROM questions_tb
+	</selectKey>
+	INSERT INTO questions_tb VALUES(
+		#{seq},
+		#{email},
+		#{content},
+		DEFAULT,
+		'',
+		DEFAULT)
+</insert>
+
+<update id="adminAnswerUpdate">
+	UPDATE questions_tb
+	SET answer_content=#{answer_content}, answer_date = sysdate
+	WHERE seq = #{seq}
+</update>
+
+</mapper>
