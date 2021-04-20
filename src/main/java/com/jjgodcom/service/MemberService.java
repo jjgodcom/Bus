@@ -2,8 +2,10 @@ package com.jjgodcom.service;
 
 import java.util.List;
 
+import com.jjgodcom.vo.AreaTimeVO;
 import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
+import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
 
 public interface MemberService {
@@ -21,4 +23,6 @@ public interface MemberService {
 	public List<BoardVO> boardSearchSelectList(String email);
 	public BoardVO boardSelectOne(BoardVO vo);
 	public int adminAnswerUpdate(BoardVO vo);
+	public List<AreaTimeVO> areaTimeSelectList(String area);
+	public List<SeatVO> seatSelectList(String bus);
 }

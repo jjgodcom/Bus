@@ -39,11 +39,11 @@
 							<div class="input-warp">
 								<div class="input-box">
 									<label for="user-id">아이디</label>
-									<input type="text" id="user-id" name="email" value="admin" placeholder="아이디를 입력하세요"/>
+									<input type="text" id="user-id" name="email" value="banana@naver.com" placeholder="아이디를 입력하세요"/>
 								</div>
 								<div class="input-box">
 									<label for="user-pw">비밀번호</label>
-									<input type="password" id="user-pw" name="password" value="admin" placeholder="비밀번호를 입력하세요"/>
+									<input type="password" id="user-pw" name="password" value="a100g!" placeholder="비밀번호를 입력하세요"/>
 								</div>
 							</div>
 							<input type="submit" class="login-btn" value="로그인"/>

@@ -35,12 +35,26 @@
 			</ul>
 			<!-- // main-tap -->
 			<!-- main_content -->
+<form action="busSearch">
 			<div class="main-content ticketing">
 				<div class="tab-content">
 					<div class="place">
 						<p class="title">출발지</p>
-						<select>
-							<option value="">출발지 리스트</option>
+						<select name="departure_area">
+							<option value="seoul_time_tb">서울</option>
+							<option value="gyeonggi_time_tb">경기</option>
+							<option value="incheon_time_tb">인천</option>
+							<option value="gangwon_time_tb">강원</option>
+							<option value="chungnam_time_tb">충남</option>
+							<option value="daejeon_time_tb">대전</option>
+							<option value="chungbuk_time_tb">충북</option>
+							<option value="jeonbuk_time_tb">전북</option>
+							<option value="gyeongbuk_time_tb">경북</option>
+							<option value="busam_time_tb">부산</option>
+							<option value="ulsan_time_tb">울산</option>
+							<option value="gwangju_time_tb">광주</option>
+							<option value="gyeongnam_time_tb">경남</option>
+							<option value="jeonnam_time_tb">전남</option>
 						</select>
 					</div>
 					<div class="date">
@@ -48,8 +62,9 @@
 						<p class="text">2021. 03. 23. 화</p>
 					</div>
 				</div> 
-				<input type="button" class="main-content-btn" value="조회하기" onClick="location.href='search'">
+				<input type="submit" class="main-content-btn" value="조회하기">
 			</div>
+</form>
 			<!-- // main_content -->
 			<!-- main_content -->
 			<div class="main-content ticket">

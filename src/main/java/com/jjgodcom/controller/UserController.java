@@ -16,9 +16,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jjgodcom.service.MemberService;
 import com.jjgodcom.service.SendMailService;
-import com.jjgodcom.service.SendMailServiceImpl;
+import com.jjgodcom.vo.AreaTimeVO;
 import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
+import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
 
 @Controller
@@ -317,6 +318,29 @@ public class UserController {
 			mv.setViewName("redirect:/myPage");
 		}
 		
+		return mv;
+	}
+	
+	// user ticketing search page
+	@RequestMapping(value = "/busSearch")
+	public ModelAndView search(HttpServletRequest request,ModelAndView mv) {
+		
+		String area = request.getParameter("departure_area");
+		List<AreaTimeVO> terminal = service.areaTimeSelectList(area);
+		mv.addObject("list",terminal);
+		mv.setViewName("user/ticketing/search");
+		return mv;
+	}
+	
+	// user ticketing seat page
+	@RequestMapping(value = "/seat")
+	public ModelAndView seat(ModelAndView mv,HttpServletRequest request) {
+		
+		String seat = request.getParameter("seat");
+		System.out.println(seat);
+		List<SeatVO> list = service.seatSelectList(seat);
+		System.out.println(list);
+		mv.setViewName("user/ticketing/seat");
 		return mv;
 	}
 

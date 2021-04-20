@@ -47,15 +47,17 @@
 							<span class="blank">빈곳</span>
 						</div>
 						<div class="bus-data-body">
+<c:forEach var="list" items="${list}">
 							<!-- bus -->
 							<div class="bus">
-								<span class="start-time">06:00</span>
-								<span class="destination">서울</span>
-								<span class="price">1,000</span>
-								<span class="seat">28/28</span>
-								<span class="blank"><a href="seat">선택 ></a></span>
+								<span class="start-time">${list.departure_time}</span>
+								<span class="destination">${list.departure_area}</span>
+								<span class="price">${list.ticket_price}</span>
+								<span class="seat">${list.remaining_seats}/${list.total_seats}</span>
+								<span class="blank"><a href="seat?seat=${list.bus_name}">선택 ></a></span>
 							</div>
 							<!-- // bus -->
+</c:forEach>
 						</div>
 					</div>
 				</div>

@@ -72,16 +72,16 @@
 		base-package="com.jjgodcom.controller" />
 
 	<!-- 트랜잭션 오류시 주석 -->
-	<tx:advice id="txAdvice" transaction-manager="txManager">
+	<!-- <tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
 			<tx:method name="*" rollback-for="Exception"/>
 		</tx:attributes>
-	</tx:advice>
+	</tx:advice> -->
 	
 	<!-- 트랜잭션 오류시 주석 -->
-	<aop:config>
+	<!-- <aop:config>
 		<aop:pointcut expression="within(com.jjgodcom.service..*)" id="txPointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
-	</aop:config>
+	</aop:config> -->
 
 </beans:beans>

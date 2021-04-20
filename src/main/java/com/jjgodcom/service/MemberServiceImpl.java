@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jjgodcom.utils.MemberDAO;
+import com.jjgodcom.vo.AreaTimeVO;
 import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
+import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
 
 @Service
@@ -78,6 +80,17 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int adminAnswerUpdate(BoardVO vo) {
 		return dao.adminAnswerUpdate(vo);
+	}
+
+	@Override
+	public List<AreaTimeVO> areaTimeSelectList(String area) {
+		return dao.areaTimeSelectList(area);
+	}
+
+	@Override
+	public List<SeatVO> seatSelectList(String bus) {
+		System.out.println(bus);
+		return dao.seatSelectList(bus);
 	}
 
 	
