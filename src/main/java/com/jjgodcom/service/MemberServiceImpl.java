@@ -108,6 +108,11 @@ public class MemberServiceImpl implements MemberService{
 		return dao.userTicketingSelectList(email);
 	}
 
+	@Override
+	public List<TicketingVO> ticketingSelectList() {
+		return dao.ticketingSelectList();
+	}
+
 	
 
 	

@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.jjgodcom.service.MemberService;
 import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
+import com.jjgodcom.vo.TicketingVO;
 
 @Controller
 public class AdminController {
@@ -80,6 +81,10 @@ public class AdminController {
 	// admin ticketing list
 	@RequestMapping(value = "/admin/ticketingList")
 	public ModelAndView adminTicketingList(ModelAndView mv) {
+		
+		List<TicketingVO> list = service.ticketingSelectList();
+		mv.addObject("list",list);
+		
 		mv.setViewName("admin/ticketing/list");
 		return mv;
 	}

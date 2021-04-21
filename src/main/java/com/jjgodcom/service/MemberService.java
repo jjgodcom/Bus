@@ -29,6 +29,7 @@ public interface MemberService {
 	public int seatUpdate(SeatVO vo);
 	public int ticketingInsert(TicketingVO vo);
 	public List<TicketingVO> userTicketingSelectList(String email);
+	public List<TicketingVO> ticketingSelectList();
 	
 	
 }

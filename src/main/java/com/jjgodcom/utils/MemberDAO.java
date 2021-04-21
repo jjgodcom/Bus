@@ -112,4 +112,9 @@ public class MemberDAO {
 	public List<TicketingVO> userTicketingSelectList(String email) {
 		return sqlSession.selectList(TM+"userTicketingSelectList", email);
 	} //areaTimeSelectList
+	
+	// ** areaTimeSelectList
+	public List<TicketingVO> ticketingSelectList() {
+		return sqlSession.selectList(TM+"ticketingSelectList");
+	} //areaTimeSelectList
 }
