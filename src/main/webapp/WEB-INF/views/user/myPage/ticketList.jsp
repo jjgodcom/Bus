@@ -47,35 +47,36 @@
 						<p class="not-data">예매 자료가 존재하지 않습니다.</p>
 						<!-- // not-data -->
 </c:if>
+						<c:forEach var="list" items="${list}">
 						<!-- item -->
 						<div class="data-info-box">
 							<div class="info-title-box">티켓</div>
-							<div class="info-head-box">2021. 03. 31(수) 17:00 출발</div>
+							<div class="info-head-box">2021. 03. 31(수) ${list.departure_date} 출발</div>
 							<div class="info-body-box">
 								<div class="left-box">
 									<div class="info-box">
 										<div class="round">출발</div>
-										<div class="text">서울</div>
+										<div class="text">${list.departure_area}</div>
 									</div>
 									<div class="info-box">
 										<div class="round">도착</div>
-										<div class="text">서울</div>
+										<div class="text">${list.destination}</div>
 									</div>
 								</div>
 								<div class="right-box">
 									<div class="info-box">
 										<span class="s-text">매수</span>
-										<span class="m-text">2</span>
+										<span class="m-text">${list.number_of_tickets}</span>
 									</div>
 									<div class="info-box">
 										<span class="s-text">좌석</span>
-										<span class="m-text">5, 8</span>
+										<span class="m-text">${list.seat_number}</span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<input type="button" class="cancel-btn" value="예매취소" />
 						<!-- // item -->
+						</c:forEach>
 					</div>
 				</div>
 				<!-- // data-box -->

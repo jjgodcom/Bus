@@ -45,7 +45,7 @@
 					<!-- //item -->
 					<!-- item -->
 					<li class="nav-item">
-						<a class="nav-link" href="#e">
+						<a class="nav-link" href="/admin/ticketingList">
 							<i class="menu-icon typcn typcn-document-text"></i>
 							<span class="menu-title">예매관리</span>
 						</a>

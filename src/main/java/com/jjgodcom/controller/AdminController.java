@@ -76,5 +76,12 @@ public class AdminController {
 		mv.setViewName("redirect:/admin/questionsList");
 		return mv;
 	}
+	
+	// admin ticketing list
+	@RequestMapping(value = "/admin/ticketingList")
+	public ModelAndView adminTicketingList(ModelAndView mv) {
+		mv.setViewName("admin/ticketing/list");
+		return mv;
+	}
 
 }

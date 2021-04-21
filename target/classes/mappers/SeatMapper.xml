@@ -6,5 +6,11 @@
 	<select id="seatSelectList" parameterType="String" resultType="com.jjgodcom.vo.SeatVO">
 		select * from ${value}
 	</select>
+	
+	<update id="seatUpdate">
+		UPDATE ${bus_name}
+		SET bus_name=#{bus_name}, email = #{email}, available_seat = #{available_seat}
+		WHERE seat_number = #{seat_number}
+	</update>
 
 </mapper>

@@ -21,6 +21,7 @@ import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
 import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
+import com.jjgodcom.vo.TicketingVO;
 
 @Controller
 public class UserController {
@@ -101,6 +102,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/logout")
 	public ModelAndView logoutDo(HttpServletRequest request, ModelAndView mv, RedirectAttributes rttr) {
+		
 		
 		HttpSession session = request.getSession(false);
 		
@@ -231,7 +233,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/myPage")
-	public ModelAndView myPage(HttpSession session,ModelAndView mv, MemberVO vo) {
+	public ModelAndView myPage(HttpSession session,ModelAndView mv, MemberVO vo, TicketingVO tvo) {
 		
 		String email = (String)session.getAttribute("email");
 		vo.setEmail(email);
@@ -334,13 +336,70 @@ public class UserController {
 	
 	// user ticketing seat page
 	@RequestMapping(value = "/seat")
-	public ModelAndView seat(ModelAndView mv,HttpServletRequest request) {
+	public ModelAndView seat(ModelAndView mv,HttpServletRequest request,HttpServletResponse response) {
 		
 		String seat = request.getParameter("seat");
-		System.out.println(seat);
+		String departure_time = request.getParameter("departure_time");
+		String departure_area = request.getParameter("departure_area");
+		String destination = request.getParameter("destination");
+		String remaining_seats = request.getParameter("remaining_seats");
 		List<SeatVO> list = service.seatSelectList(seat);
-		System.out.println(list);
+		
+		// 페이지에 세팅하기 위한거
+		mv.addObject("table",seat);
+		mv.addObject("departure_time",departure_time);
+		mv.addObject("departure_area",departure_area);
+		mv.addObject("destination",destination);
+		mv.addObject("remaining_seats",remaining_seats);
+		mv.addObject("list",list);
+		
 		mv.setViewName("user/ticketing/seat");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/ticketUpdate")
+	public ModelAndView ticketList(ModelAndView mv,HttpServletRequest request, SeatVO svo,TicketingVO tvo,HttpSession session) {
+		
+		// A - 테이블(seat) 좌석 업데이트
+		// #1 - email 업데이트
+		// #1 - seat_number 맞는곳에 available_seat 1로 업데이트
+		String table = request.getParameter("table");
+		String email = (String) session.getAttribute("email");
+		String check_seat = request.getParameter("check_seat"); // ,로 저장된 문자열
+		String[] seatArr = check_seat.split(","); // 배열로 수정
+		
+		for (String s : seatArr) {
+			// 배열 크기 만큼 업데이트
+			svo.setBus_name(table);
+			svo.setEmail(email);
+			svo.setSeat_number(Integer.parseInt(s)); // 선택된 좌석
+			svo.setAvailable_seat(1);
+			service.seatUpdate(svo);
+		}
+
+		// B - ticketing_detail_tb 테이블 인서트
+		tvo.setEmail(email); // 이메일
+		tvo.setDeparture_area(request.getParameter("departure_area")); // 출발지
+		tvo.setDestination(request.getParameter("destination")); // 도착치
+		tvo.setNumber_of_tickets(Integer.toString(seatArr.length)); // 티켓수
+		tvo.setSeat_number(check_seat); // 좌석번호
+		tvo.setDeparture_date(request.getParameter("departure_date")); // 출발날짜시간 
+		tvo.setTicketing_status(1); // 예매상태
+		tvo.setBus_name(table); // 버스이름(테이블명)
+		tvo.setArea_name("tt"); // 모름
+		service.ticketingInsert(tvo);
+		
+		mv.setViewName("redirect:/ticketList");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/ticketList")
+	public ModelAndView ticketList(ModelAndView mv,HttpSession session) {
+		String email = (String) session.getAttribute("email");
+		List<TicketingVO> list = service.userTicketingSelectList(email);
+		mv.addObject("list",list);
+		
+		mv.setViewName("user/myPage/ticketList");
 		return mv;
 	}
 

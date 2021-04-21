@@ -40,7 +40,8 @@
 					<div class="data-head">2021. 3. 31. 수</div>
 					<div class="data-body">
 						<div class="bus-data-head">
-							<span class="start-time">출발</span>
+							<span class="start-time">시간</span>
+							<span class="destination">출발</span>
 							<span class="destination">도착지</span>
 							<span class="price">요금</span>
 							<span class="seat">잔여석/총좌석</span>
@@ -52,9 +53,17 @@
 							<div class="bus">
 								<span class="start-time">${list.departure_time}</span>
 								<span class="destination">${list.departure_area}</span>
+								<span class="destination">${list.destination}</span> 
 								<span class="price">${list.ticket_price}</span>
 								<span class="seat">${list.remaining_seats}/${list.total_seats}</span>
-								<span class="blank"><a href="seat?seat=${list.bus_name}">선택 ></a></span>
+								<span class="blank">
+									<a href="seat?seat=${list.bus_name}&
+									departure_time=${list.departure_time}&
+									departure_area=${list.departure_area}&
+									destination=${list.destination}&
+									remaining_seats=${list.remaining_seats}">선택 ></a>
+								</span>
+								<!-- 출발시간,출발지,도착지,잔여좌석 -->
 							</div>
 							<!-- // bus -->
 </c:forEach>

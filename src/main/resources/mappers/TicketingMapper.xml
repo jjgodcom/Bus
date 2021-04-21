@@ -6,5 +6,27 @@
 	<select id="areaTimeSelectList" parameterType="String" resultType="com.jjgodcom.vo.AreaTimeVO">
 		select * from ${value}
 	</select>
+	
+	<select id="userTicketingSelectList" parameterType="String" resultType="com.jjgodcom.vo.TicketingVO">
+		select * from ticketing_detail_tb where email = #{email}
+	</select>
+	
+	<insert id="ticketingInsert">
+		<selectKey keyProperty="ticketing_number" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(ticketing_number),0)+1 FROM ticketing_detail_tb
+		</selectKey>
+		INSERT INTO ticketing_detail_tb  VALUES(
+			#{ticketing_number},
+			#{email},
+			#{departure_area},
+			#{destination},
+			#{number_of_tickets},
+			#{seat_number},
+			#{departure_date},
+			#{ticketing_status},
+			#{bus_name},
+			#{area_name})
+	</insert>
+
 
 </mapper>

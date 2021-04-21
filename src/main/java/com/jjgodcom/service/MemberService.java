@@ -7,6 +7,7 @@ import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
 import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
+import com.jjgodcom.vo.TicketingVO;
 
 public interface MemberService {
 	
@@ -25,4 +26,9 @@ public interface MemberService {
 	public int adminAnswerUpdate(BoardVO vo);
 	public List<AreaTimeVO> areaTimeSelectList(String area);
 	public List<SeatVO> seatSelectList(String bus);
+	public int seatUpdate(SeatVO vo);
+	public int ticketingInsert(TicketingVO vo);
+	public List<TicketingVO> userTicketingSelectList(String email);
+	
+	
 }

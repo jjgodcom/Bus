@@ -11,6 +11,7 @@ import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
 import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
+import com.jjgodcom.vo.TicketingVO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -89,8 +90,22 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public List<SeatVO> seatSelectList(String bus) {
-		System.out.println(bus);
 		return dao.seatSelectList(bus);
+	}
+
+	@Override
+	public int seatUpdate(SeatVO vo) {
+		return dao.seatUpdate(vo);
+	}
+
+	@Override
+	public int ticketingInsert(TicketingVO vo) {
+		return dao.ticketingInsert(vo);
+	}
+
+	@Override
+	public List<TicketingVO> userTicketingSelectList(String email) {
+		return dao.userTicketingSelectList(email);
 	}
 
 	

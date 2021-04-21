@@ -11,6 +11,7 @@ import com.jjgodcom.vo.BoardVO;
 import com.jjgodcom.vo.MemberVO;
 import com.jjgodcom.vo.SeatVO;
 import com.jjgodcom.vo.TerminalVO;
+import com.jjgodcom.vo.TicketingVO;
 
 @Repository
 public class MemberDAO {
@@ -94,9 +95,21 @@ public class MemberDAO {
 	
 	// ** areaTimeSelectList
 	public List<SeatVO> seatSelectList(String bus) {
-		System.out.println(bus);
 		return sqlSession.selectList(SM+"seatSelectList", bus);
 	} //areaTimeSelectList
 	
+	// ** update seat
+	public int seatUpdate(SeatVO vo) {
+		return sqlSession.update(SM+"seatUpdate", vo);
+	} //updatePhone
 	
+	// insert
+	public int ticketingInsert(TicketingVO vo) {
+		return sqlSession.insert(TM+"ticketingInsert", vo);
+	} //insert
+	
+	// ** areaTimeSelectList
+	public List<TicketingVO> userTicketingSelectList(String email) {
+		return sqlSession.selectList(TM+"userTicketingSelectList", email);
+	} //areaTimeSelectList
 }

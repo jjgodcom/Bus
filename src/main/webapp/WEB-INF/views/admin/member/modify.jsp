@@ -45,7 +45,7 @@
 					<!-- //item -->
 					<!-- item -->
 					<li class="nav-item">
-						<a class="nav-link" href="/admin/questionsList">
+						<a class="nav-link" href="/admin/ticketingList">
 							<i class="menu-icon typcn typcn-document-text"></i>
 							<span class="menu-title">예매관리</span>
 						</a>
@@ -53,7 +53,7 @@
 					<!-- //item -->
 					<!-- item -->
 					<li class="nav-item">
-						<a class="nav-link" href="adminQuestionsList">
+						<a class="nav-link" href="/admin/questionsList">
 							<i class="menu-icon typcn typcn-document-text"></i>
 							<span class="menu-title">Q&#38;A 답변관리</span>
 						</a>
